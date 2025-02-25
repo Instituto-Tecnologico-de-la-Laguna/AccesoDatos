@@ -4,17 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace AccesoDatos
 {
     internal class Datos
     {
         String cadenaConexion = "Data Source=DESKTOP-H69TC9M\\SQLEXPRESS;" +
-            "integrated security=true;initial catalog=pubs";
+            "integrated security=true;initial catalog=pubs;encrypt=false";
         SqlConnection conexion;
 
-        private SqlConnection abrirConexion() {
-            try {
+        private SqlConnection abrirConexion()
+        {
+            try
+            {
                 conexion = new SqlConnection(cadenaConexion);
                 conexion.Open(); //Abrir conexion a BD
                 return conexion;
@@ -26,18 +29,37 @@ namespace AccesoDatos
             }
 
         }
-        public bool prueba() {
+        public bool prueba()
+        {
             try
             {
                 abrirConexion();
                 return true;
             }
-            catch   (Exception ex)
+            catch (Exception ex)
             {
-              return false;
+                return false;
             }
-          
+
         }
-            
+
+
+        public DataSet Consulta(string consulta)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(consulta, abrirConexion());
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+
+
+        }
     }
 }
