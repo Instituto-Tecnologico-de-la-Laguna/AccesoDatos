@@ -41,6 +41,7 @@
             dgvAuthors.RowHeadersWidth = 62;
             dgvAuthors.Size = new Size(800, 450);
             dgvAuthors.TabIndex = 0;
+            dgvAuthors.CellContentClick += dgvAuthors_CellContentClick;
             // 
             // frmAuthors
             // 

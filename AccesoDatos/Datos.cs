@@ -59,7 +59,21 @@ namespace AccesoDatos
                 return null;
             }
 
+        }
 
+        public bool comando(string consulta)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand(consulta, abrirConexion());
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
         }
     }
 }
