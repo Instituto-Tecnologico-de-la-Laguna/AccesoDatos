@@ -26,5 +26,21 @@ namespace AccesoDatos
                 dgvAuthors.DataSource = ds.Tables[0];
             }
         }
+
+        private void dgvAuthors_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmActualizaAutor actualiza = new frmActualizaAutor(
+                dgvAuthors[0, e.RowIndex].Value.ToString(),
+                dgvAuthors[1, e.RowIndex].Value.ToString(), 
+                dgvAuthors[2, e.RowIndex].Value.ToString(),
+                dgvAuthors[3, e.RowIndex].Value.ToString(), 
+                dgvAuthors[4, e.RowIndex].Value.ToString(),
+                dgvAuthors[5, e.RowIndex].Value.ToString(), 
+                dgvAuthors[6, e.RowIndex].Value.ToString(),
+                dgvAuthors[7, e.RowIndex].Value.ToString(), 
+                Convert.ToBoolean(dgvAuthors[8, e.RowIndex].Value));
+                actualiza.Show();
+   
+        }
     }
 }

@@ -45,6 +45,8 @@
             label8 = new Label();
             txtState = new TextBox();
             chkContract = new CheckBox();
+            btnActualizar = new Button();
+            btnCancelar = new Button();
             SuspendLayout();
             // 
             // label1
@@ -186,11 +188,32 @@
             chkContract.Text = "Contract";
             chkContract.UseVisualStyleBackColor = true;
             // 
+            // btnActualizar
+            // 
+            btnActualizar.Location = new Point(311, 326);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(112, 34);
+            btnActualizar.TabIndex = 17;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = true;
+            btnActualizar.Click += btnActualizar_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(429, 327);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(112, 34);
+            btnCancelar.TabIndex = 18;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            // 
             // frmActualizaAutor
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(557, 376);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnActualizar);
             Controls.Add(chkContract);
             Controls.Add(label8);
             Controls.Add(txtState);
@@ -234,5 +257,7 @@
         private Label label8;
         private TextBox txtState;
         private CheckBox chkContract;
+        private Button btnActualizar;
+        private Button btnCancelar;
     }
 }
