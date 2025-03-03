@@ -29,28 +29,40 @@
         private void InitializeComponent()
         {
             dgvAuthors = new DataGridView();
+            btnInsertar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvAuthors).BeginInit();
             SuspendLayout();
             // 
             // dgvAuthors
             // 
             dgvAuthors.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAuthors.Dock = DockStyle.Fill;
-            dgvAuthors.Location = new Point(0, 0);
+            dgvAuthors.Location = new Point(0, 64);
             dgvAuthors.Name = "dgvAuthors";
             dgvAuthors.RowHeadersWidth = 62;
-            dgvAuthors.Size = new Size(800, 450);
+            dgvAuthors.Size = new Size(1185, 386);
             dgvAuthors.TabIndex = 0;
             dgvAuthors.CellContentClick += dgvAuthors_CellContentClick;
+            // 
+            // btnInsertar
+            // 
+            btnInsertar.Location = new Point(1063, 12);
+            btnInsertar.Name = "btnInsertar";
+            btnInsertar.Size = new Size(112, 34);
+            btnInsertar.TabIndex = 1;
+            btnInsertar.Text = "Insertar";
+            btnInsertar.UseVisualStyleBackColor = true;
+            btnInsertar.Click += btnInsertar_Click;
             // 
             // frmAuthors
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1187, 450);
+            Controls.Add(btnInsertar);
             Controls.Add(dgvAuthors);
             Name = "frmAuthors";
             Text = "Authors";
+            Activated += frmAuthors_Activated;
             Load += frmAuthors_Load;
             ((System.ComponentModel.ISupportInitialize)dgvAuthors).EndInit();
             ResumeLayout(false);
@@ -59,5 +71,6 @@
         #endregion
 
         private DataGridView dgvAuthors;
+        private Button btnInsertar;
     }
 }

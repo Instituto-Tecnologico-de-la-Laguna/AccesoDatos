@@ -47,6 +47,7 @@
             chkContract = new CheckBox();
             btnActualizar = new Button();
             btnCancelar = new Button();
+            btnEliminar = new Button();
             SuspendLayout();
             // 
             // label1
@@ -190,7 +191,7 @@
             // 
             // btnActualizar
             // 
-            btnActualizar.Location = new Point(311, 326);
+            btnActualizar.Location = new Point(193, 326);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(112, 34);
             btnActualizar.TabIndex = 17;
@@ -200,18 +201,29 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(429, 327);
+            btnCancelar.Location = new Point(429, 326);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(112, 34);
             btnCancelar.TabIndex = 18;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(311, 326);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(112, 34);
+            btnEliminar.TabIndex = 19;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
             // frmActualizaAutor
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(557, 376);
+            Controls.Add(btnEliminar);
             Controls.Add(btnCancelar);
             Controls.Add(btnActualizar);
             Controls.Add(chkContract);
@@ -259,5 +271,6 @@
         private CheckBox chkContract;
         private Button btnActualizar;
         private Button btnCancelar;
+        private Button btnEliminar;
     }
 }
